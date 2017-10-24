@@ -3,16 +3,16 @@
 //对于动态加载下来的 Controller,filter等 需要手工注册， 这就需要调用  register 方法， 为了方便使用， 可以定义一个全局的 app 对象，
 // 将 AngularJS 的注册 controller 、 directive 、 filter 、 factory 、 service 方法都暴露出来，
 
-var blogApp=angular.module('blogApp')
+var blog=angular.module('blog')
     .config(['$controllerProvider','$compileProvider','$filterProvider','$provide',
     function ($controllerProvider, $compileProvider,$filterProvider,$provide) {
-            blogApp.registerController = $controllerProvider.register;
-            blogApp.registerDirective  = $compileProvider.directive;
-            blogApp.registerFilter     = $filterProvider.register;
-            blogApp.factory    = $provide.factory;
-            blogApp.service    = $provide.service;
-            blogApp.constant   = $provide.constant;
-            blogApp.value      = $provide.value;
+            blog.registerController = $controllerProvider.register;
+            blog.registerDirective  = $compileProvider.directive;
+            blog.registerFilter     = $filterProvider.register;
+            blog.factory    = $provide.factory;
+            blog.service    = $provide.service;
+            blog.constant   = $provide.constant;
+            blog.value      = $provide.value;
           }
     ]).config(['$translateProvider', function ($translateProvider) {
         // Register a loader for the static files

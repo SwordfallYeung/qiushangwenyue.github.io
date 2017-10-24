@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('blogApp',[
+angular.module('blog',[
    'ngAnimate',
    'ngCookies',
    'ngResource',

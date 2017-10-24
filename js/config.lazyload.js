@@ -8,7 +8,7 @@
      * key: function name of the jQuery plugin
      * value: array of the css js file located
      */
-   blogApp.constant('JQ_CONFIG',{
+      blog.constant('JQ_CONFIG',{
            easyPieChart: ['vendor/jquery/charts/easypiechart/jquery.easy-pie-chart.js'],
            sparkline:    ['vendor/jquery/charts/sparkline/jquery.sparkline.min.js'],
            plot:         ['vendor/jquery/charts/flot/jquery.flot.min.js',
@@ -39,10 +39,10 @@
                             'vendor/jquery/jvectormap/jquery-jvectormap.css'],
            footable:      ['vendor/jquery/footable/footable.all.min.js',
                         'vendor/jquery/footable/footable.core.css']
-   });
-   blogApp.constant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
-       // We configure ocLazyLoad to use the lib script.js as the async loader
-       $ocLazyLoadProvider.config({
+      });
+      blog.constant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
+        // We configure ocLazyLoad to use the lib script.js as the async loader
+        $ocLazyLoadProvider.config({
            debug:false,
            events:true,
            modules:[

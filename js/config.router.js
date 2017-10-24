@@ -15,8 +15,23 @@
 //2.Run代码块     Run代码块用来启动你的应用，并且在注射器创建完成之后开始执行。为了避免在这一点开始之后再对
 // 系统进行配置操作，只有实例和常量可以被注入到Run代码块中。你会发现，在AngularJS中，Run代码块是与main方法最类似的东西。
 //run方法用于初始化全局的数据，仅对全局作用域起作用
-angular.module('blogApp')
+angular.module('blog')
     .config(['stateProvider','$urlRouterProvider',
         function ($stateProvider,$urlRouterProvider) {
-            $urlRouterProvider.otherwise('')
+            $urlRouterProvider.otherwise('/blog/dashboard-v1');
+            $stateProvider
+                .state('blog',{
+                  abstract:true,
+                  url:'/blog',
+                  templateUrl:'tpl/blog.html'
+                })
+                .state('blog.dashboard-v1',{
+                    url:'/dashboard-v1',
+                    templateUrl:'tpl/blog_dashboard_v1.html',
+                    resolve:{
+                        deps:['$ocLazyLoad',function ($ocLazyLoad) {
+                            return $ocLazyLoad.load(['js/controllers/chart.js'])
+                        }]
+                    }
+                })
         }]);

@@ -1,3 +1,4 @@
+'use strict'
 //lazyLoad config
 
 // angular.module('blogApp').constant('') 相等于
@@ -7,7 +8,7 @@
      * key: function name of the jQuery plugin
      * value: array of the css js file located
      */
-   app.registerConstant('JQ_CONFIG',{
+   blogApp.constant('JQ_CONFIG',{
        easyPieChart: ['vendor/jquery/charts/easypiechart/jquery.easy-pie-chart.js'],
        sparkline:    ['vendor/jquery/charts/sparkline/jquery.sparkline.min.js'],
        plot:         ['vendor/jquery/charts/flot/jquery.flot.min.js',
@@ -38,7 +39,7 @@
                         'vendor/jquery/jvectormap/jquery-jvectormap.css'],
        footable:      ['vendor/jquery/footable/footable.all.min.js',
                         'vendor/jquery/footable/footable.core.css']
-   }).registerConstant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
+   }).constant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
        // We configure ocLazyLoad to use the lib script.js as the async loader
        $ocLazyLoadProvider.config({
            debug:false,

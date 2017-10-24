@@ -9,8 +9,8 @@ var blogApp=angular.module('blogApp')
             blogApp.registerController = $controllerProvider.register;
             blogApp.registerDirective  = $compileProvider.directive;
             blogApp.registerFilter     = $filterProvider.register;
-            blogApp.registerFactory    = $provide.factory;
-            blogApp.registerService    = $provide.service;
+            blogApp.factory    = $provide.factory;
+            blogApp.service    = $provide.service;
             blogApp.constant   = $provide.constant;
             blogApp.value      = $provide.value;
           }

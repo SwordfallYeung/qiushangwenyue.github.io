@@ -6,9 +6,9 @@
 var blog=angular.module('blog')
     .config(['$controllerProvider','$compileProvider','$filterProvider','$provide',
     function ($controllerProvider, $compileProvider,$filterProvider,$provide) {
-            blog.registerController = $controllerProvider.register;
-            blog.registerDirective  = $compileProvider.directive;
-            blog.registerFilter     = $filterProvider.register;
+            blog.controller = $controllerProvider.register;
+            blog.directive  = $compileProvider.directive;
+            blog.filter     = $filterProvider.register;
             blog.factory    = $provide.factory;
             blog.service    = $provide.service;
             blog.constant   = $provide.constant;
@@ -18,12 +18,12 @@ var blog=angular.module('blog')
         // Register a loader for the static files
         // So, the module will search missing translation tables under the specified urls.
         // Those urls are [prefix][langKey][suffix].
-        $translateProvider.useStaticFilesLoader({
-            prefix:'l10n/',
-            suffix: '.js'
-        });
+        // $translateProvider.useStaticFilesLoader({
+        //     prefix:'l10n/',
+        //     suffix: '.js'
+        // });
         // Tell the module what language to use by default
-        $translateProvider.preferredLanguage('ch');
+        // $translateProvider.preferredLanguage('en');
         // Tell the module to store the language in the local storage
-        $translateProvider.useLocalStorage();
+        // $translateProvider.useLocalStorage();
     }]);

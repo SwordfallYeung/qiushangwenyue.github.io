@@ -9,9 +9,9 @@ angular.module('blog',[
    'ngStorage',
    'ui.router',
    'ui.bootstrap',
-   'ui.load',
-   'ui.jq',
-   'ui.validate',
+   // 'ui.load',
+   // 'ui.jq',
+   // 'ui.validate',
    'oc.lazyLoad',
    'pascalprecht.translate'
 ]);

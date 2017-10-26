@@ -16,7 +16,12 @@
 // 系统进行配置操作，只有实例和常量可以被注入到Run代码块中。你会发现，在AngularJS中，Run代码块是与main方法最类似的东西。
 //run方法用于初始化全局的数据，仅对全局作用域起作用
 angular.module('blog')
-    .config(['stateProvider','$urlRouterProvider',
+    .run(['$rootScope','$state','$stateParams',
+            function ($rootScope,$state,$stateParams) {
+                $rootScope.$state=$state;
+                $rootScope.$stateParams=$stateParams;
+            }])
+    .config(['$stateProvider','$urlRouterProvider',
         function ($stateProvider,$urlRouterProvider) {
             $urlRouterProvider.otherwise('/blog/dashboard-v1');
             $stateProvider
@@ -27,11 +32,11 @@ angular.module('blog')
                 })
                 .state('blog.dashboard-v1',{
                     url:'/dashboard-v1',
-                    templateUrl:'tpl/blog_dashboard_v1.html',
-                    resolve:{
-                        deps:['$ocLazyLoad',function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(['js/controllers/chart.js'])
-                        }]
-                    }
+                    templateUrl:'tpl/dashboard_v1.html',
+                    // resolve:{
+                    //     deps:['$ocLazyLoad',function ($ocLazyLoad) {
+                    //         return $ocLazyLoad.load(['js/controllers/chart.js'])
+                    //     }]
+                    // }
                 })
         }]);

@@ -40,7 +40,7 @@
            footable:      ['vendor/jquery/footable/footable.all.min.js',
                         'vendor/jquery/footable/footable.core.css']
       });
-      blog.constant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
+   blog.constant(['$ocLazyLoadProvider',function ($ocLazyLoadProvider) {
         // We configure ocLazyLoad to use the lib script.js as the async loader
         $ocLazyLoadProvider.config({
            debug:false,

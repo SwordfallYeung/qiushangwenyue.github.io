@@ -28,7 +28,12 @@ angular.module('blog')
                 .state('blog',{
                   abstract:true,
                   url:'/blog',
-                  templateUrl:'tpl/blog.html'
+                  templateUrl:'tpl/blog.html',
+                  resolve:{
+                      deps:['$ocLazyLoad',function ($ocLazyLoad) {
+                          return $ocLazyLoad.load(['js/controller/header/typeAheadDemoCtrl.js']);
+                      }]
+                  }
                 })
                 .state('blog.dashboard-v1',{
                     url:'/dashboard-v1',

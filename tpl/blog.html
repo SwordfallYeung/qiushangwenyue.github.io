@@ -1,21 +1,20 @@
 <!--navbar top-->
-<div data-ng-include=" 'tpl/common/header.html' " class="app-header navbar">
+<div data-ng-include=" 'tpl/common/header.html' " class="app-header navbar" style="border:1px solid red;">
 </div>
 <!--/ navbar top-->
 
 <!--menu left-->
-<div data-ng-include=" 'tpl/common/aside.html'" class="app-aside hidden-xs {{blog.settings.asideColor}}">
-</div>
+<!--<div data-ng-include=" 'tpl/common/aside.html'" class="app-aside hidden-xs {{blog.settings.asideColor}}" style="border:1px solid black;"></div>-->
 <!--/menu left-->
 
 <!--content-->
-<div class="app-content">
+<div class="app-content" style="border:1px solid yellowgreen;">
     <div class="app-content-body fade-in-up" ui-view></div>
 </div>
 <!--/content-->
 
 <!--footer-->
-<div class="app-footer wrapper b-t bg-light">
+<div class="app-footer wrapper b-t bg-light" style="border:1px solid purple;">
     <span class="pull-right">
         {{blog.version}}
         <a href ui-scrollfix-target="blog" class="m-l-sm text-muted">
@@ -27,5 +26,5 @@
 <!--/footer-->
 
 <!--settings float-->
-<div data-ng-include=" 'tpl/common/settings.html'" class="settings panel panel-default"></div>
+<!--<div data-ng-include=" 'tpl/common/settings.html'" class="settings panel panel-default"></div>-->
 <!--/ settings float-->

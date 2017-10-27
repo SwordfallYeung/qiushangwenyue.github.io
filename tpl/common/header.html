@@ -5,3 +5,82 @@
              <span class="hidden-folded m-l-xs">{{blog.name}}</span>
          </a>
      </div>
+     <!--/navbar header-->
+
+     <!--navbar collapse-->
+     <div class="collapse pos-rlt navbar-collapse box-shadow {{blog.settings.navbarCollapseColor}}">
+         <!--button 左侧图标是否折叠-->
+          <div class="nav navbar-nav hidden-xs">
+              <a href class="btn no-shadow navbar-btn" ng-click="blog.settings.asideFolded = !blog.settings.asideFolded">
+                  <i class="fa {{blog.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+              </a>
+              <!--用户图标是否展示-->
+              <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
+                  <i class="icon-user fa-fw"></i>
+              </a>
+          </div>
+         <!--/button-->
+
+         <!--link and dropdown-->
+            <ul class="nav navbar-nav hidden-sm">
+                <li class="dropdown" dropdown>
+                    <a href class="dropdown-toggle" dropdown-toggle>
+                        <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                        <span translate="header.navbar.new.NEW"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" translate="header.navbar.new.PROJECT">Projects</a> </li>
+                        <li>
+                            <a href>
+                                <span class="badge bg-info pull-right">5</span>
+                                <span translate="header.navbar.new.TASK">Task</span>
+                            </a>
+                        </li>
+                        <li><a href translate="header.navbar.new.USER">User</a> </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href>
+                                <span class="badge bg-danger pull-right">4</span>
+                                <span translate="header.navbar.new.EMAIL">Email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+         <!--/link and dropdown-->
+
+         <!--search form-->
+         <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" target=".navbar-collapse" role="search" ng-controller="TypeAheadDemoCtrl">
+             <div class="form-group">
+                 <div class="input-group">
+                     <input type="text" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
+                     <span class="input-group-btn">
+                         <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i> </button>
+                     </span>
+                 </div>
+             </div>
+         </form>
+         <!--/ search form-->
+
+         <!--navbar right-->
+         <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown hidden-sm" is-open="lang.isOpen" uib-dropdown>
+                 <a href class="dropdown-toggle" uib-dropdown-toggle>
+                     {{selectedLang}} <b class="caret"></b>
+                 </a>
+                 <!--dropdown-->
+                 <ul class="dropdown-menu animated fadeInRight w">
+                     <li ng-repeat="(langKey,label) in langs">
+                         <a ng-click="setLang(langKey,$event)" href>{{label}}</a>
+                     </li>
+                 </ul>
+                 <!--/ dropdown-->
+             </li>
+             <li class="hidden-xs">
+                 <a ui-fullscreen></a>
+             </li>
+         </ul>
+         <!--/ navbar right-->
+
+     </div>
+     <!--/navbar collapse-->

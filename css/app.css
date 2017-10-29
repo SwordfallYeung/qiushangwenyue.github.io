@@ -700,7 +700,8 @@ body {
 }
 
 .app-aside {
-  float: left;
+  /*float: left;*/
+  float: right;
 }
 
 .app-aside:before {
@@ -740,7 +741,7 @@ body {
 
 .app-content:before,
 .app-content:after {
-  display: table;
+  display: block;
   content: " ";
 }
 
@@ -910,10 +911,18 @@ body {
   .navbar-header {
     width: 200px;
   }
-  .navbar-collapse,
+  /*.navbar-collapse,
   .app-content,
   .app-footer {
     margin-left: 200px;
+  }*/
+
+  .navbar-collapse{
+    margin-left: 200px;
+  }
+
+  .app-content{
+    margin-right: 200px;
   }
   .app-aside-right {
     position: absolute;
@@ -948,7 +957,7 @@ body {
     width: 60px;
   }
   .app-aside-folded .navbar-collapse,
-  .app-aside-folded .app-content,
+  /*.app-aside-folded .app-content,*/
   .app-aside-folded .app-footer {
     margin-left: 60px;
   }
@@ -1371,7 +1380,7 @@ html {
 }
 
 @media (min-width: 992px) {
-  .app-aside-dock .app-content,
+  /*.app-aside-dock .app-content,*/
   .app-aside-dock .app-footer {
     margin-left: 0;
   }

@@ -2,15 +2,17 @@
 <div data-ng-include=" 'tpl/common/header.html' " class="app-header navbar" style="border:1px solid red;"></div>
 <!--/ navbar top-->
 
-<!--menu left-->
+<!--menu right-->
 <div data-ng-include=" 'tpl/common/aside.html'" class="app-aside hidden-xs {{blog.settings.asideColor}}" style="border:1px solid black;"></div>
-<!--/menu left-->
+<!--/menu right-->
+
 
 <!--content-->
 <div class="app-content" style="border:1px solid yellowgreen;">
     <div class="app-content-body fade-in-up" ui-view></div>
 </div>
 <!--/content-->
+
 
 <!--footer-->
 <div class="app-footer wrapper b-t bg-light" style="border:1px solid purple;">

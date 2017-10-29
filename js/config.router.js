@@ -23,7 +23,7 @@ angular.module('blog')
             }])
     .config(['$stateProvider','$urlRouterProvider',
         function ($stateProvider,$urlRouterProvider) {
-            $urlRouterProvider.otherwise('/blog/dashboard-v1');
+            $urlRouterProvider.otherwise('/blog/contentBoard');
             $stateProvider
                 .state('blog',{
                   abstract:true,
@@ -35,9 +35,9 @@ angular.module('blog')
                       }]
                   }
                 })
-                .state('blog.dashboard-v1',{
-                    url:'/dashboard-v1',
-                    templateUrl:'tpl/dashboard_v1.html',
+                .state('blog.contentBoard',{
+                    url:'/contentBoard',
+                    templateUrl:'tpl/contentBoard.html',
                     // resolve:{
                     //     deps:['$ocLazyLoad',function ($ocLazyLoad) {
                     //         return $ocLazyLoad.load(['js/controllers/chart.js'])

@@ -38,10 +38,10 @@ angular.module('blog')
                 .state('blog.contentBoard',{
                     url:'/contentBoard',
                     templateUrl:'tpl/contentBoard.html',
-                    // resolve:{
-                    //     deps:['$ocLazyLoad',function ($ocLazyLoad) {
-                    //         return $ocLazyLoad.load(['js/controllers/chart.js'])
-                    //     }]
-                    // }
+                    resolve:{
+                        deps:['$ocLazyLoad',function ($ocLazyLoad) {
+                            return $ocLazyLoad.load(['js/controller/content/articleCtrl.js'])
+                        }]
+                    }
                 })
         }]);

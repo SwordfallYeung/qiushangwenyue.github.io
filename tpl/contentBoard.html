@@ -13,7 +13,19 @@
         <!-- tasks -->
         <div class="panel wrapper" ng-controller="articleCtrl">
             <h2 class="text-center ">{{helloText.title}}</h2>
-            
+            <ui-codemirror ui-codemirror-opts="editorOptions">
+                ```sh
+                npm install -g grunt-cli
+                npm install && bower install
+                grunt
+                {{helloText.code}}
+            </ui-codemirror>
+            <div ui-codemirror ui-codemirror-opts="editorOptions">
+                ```sh
+                npm install -g grunt-cli
+                npm install && bower install
+                grunt
+            </div>
         </div>
         <!-- / tasks -->
         <!--/ main-->

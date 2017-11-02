@@ -5,9 +5,14 @@ blog.controller("articleCtrl",['$scope','$http',function ($scope,$http) {
         code:'public void static main(){}'
     };
     $scope.editorOptions={
-        lineWrapping : true,
         lineNumbers: true,
         readOnly: 'nocursor',
-        mode: 'xml'
+        mode: 'text/x-java',
+        theme:'icecoder'
     };
 }]);
+// abcdef
+// base16-dark
+// icecoder
+//material
+//seti

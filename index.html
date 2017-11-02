@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="css/font.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css" />
     <link rel="stylesheet" href="css/blog.css" type="text/css">
-    <link rel="stylesheet" href="css/codemirror.css" type="text/css">
+    <!--codemirror-->
+    <link rel="stylesheet" href="css/codemirror/codemirror.css" type="text/css">
+    <!--引入css文件，用以支持主题-->
+    <!--<link rel="stylesheet" href="css/codemirror/theme/abcdef.css">-->
+    <!--<link rel="stylesheet" href="css/codemirror/theme/base16-dark.css">-->
+    <link rel="stylesheet" href="css/codemirror/theme/icecoder.css">
+    <!--<link rel="stylesheet" href="css/codemirror/theme/material.css">-->
+    <!--<link rel="stylesheet" href="css/codemirror/theme/seti.css">-->
 </head>
 <body ng-controller="BlogCtrl">
 <div class="app" id="app"  ui-view></div>
@@ -29,8 +36,9 @@
 <script src="vendor/angular1.6.4/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="vendor/angular1.6.4/angular-touch/angular-touch.min.js"></script>
 <!--codemirror-->
-<script src="vendor/libs/codemirror.js"></script>
+<script src="vendor/libs/codemirror/codemirror.js"></script>
 <script src="vendor/angular1.6.4/angular-ui-codemirror/ui-codemirror.js"></script>
+<script src="vendor/libs/codemirror/clike.js"></script>
 <!--Vendor-->
 <script src="vendor/angular1.6.4/angular-ui-router/angular-ui-router.js"></script>
 <script src="vendor/angular1.6.4/ngstorage/ngStorage.js"></script>

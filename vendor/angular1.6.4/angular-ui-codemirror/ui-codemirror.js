@@ -119,6 +119,7 @@ function uiCodemirrorDirective($timeout, uiCodemirrorConfig) {
       //Code mirror expects a string so make sure it gets one
       //Although the formatter have already done this, it can be possible that another formatter returns undefined (for example the required directive)
       var safeViewValue = ngModel.$viewValue || '';
+      safeViewValue="\n"+safeViewValue+"\n";
       codemirror.setValue(safeViewValue);
     };
 

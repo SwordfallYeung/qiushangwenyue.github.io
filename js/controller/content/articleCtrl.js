@@ -1,7 +1,11 @@
 blog.controller("articleCtrl",['$scope','$http',function ($scope,$http) {
     $scope.helloText={
         title:'Hello world!',
-        content:'FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。\n特别适合以文件为载体的在线服务，如相册网站、视频网站等等。',
+        content:'GIT不仅仅是个版本控制系统，它也是个内容管理系统(CMS),工作管理系统等。\n' +
+        '\n' +
+        '如果你是一个具有使用SVN背景的人，你需要做一定的思想转换，来适应GIT提供的一些概念和特征。\n' +
+        '\n' +
+        'Git 与 SVN 区别点：',
         code:'                /**\n' +
         '                * @author y15079\n' +
         '                * @create 2017-11-03 16:36\n' +
@@ -26,8 +30,11 @@ blog.controller("articleCtrl",['$scope','$http',function ($scope,$http) {
         theme:'icecoder'
     };
 }]);
-// abcdef
-// base16-dark
-// icecoder
-//material
-//seti
+/*
+theme:
+  abcdef
+  base16-dark
+  icecoder
+  material
+  seti
+*/

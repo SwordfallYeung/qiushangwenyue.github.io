@@ -13,9 +13,9 @@ function articleContentFormat() {
         var value=element.text();
         var varArray=value.split("\n");
         varArray.forEach(function (value,index,array) {
-            if (value!==""){
+            // if (value!==""){
                 text+="<p>"+value+"</p>";
-            }
+            // }
         });
         element.context.innerHTML=text;
     }

@@ -10,7 +10,7 @@ blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$ht
         hostname=absUrl.substring(0,absUrl.indexOf("index.html"));
     }else {
         //git 访问
-        hostname=host+":"+port;
+        hostname=host;
     }
     console.log("hostname: "+hostname);
     $http.get(hostname+"/article/article.json").then(function (response) {

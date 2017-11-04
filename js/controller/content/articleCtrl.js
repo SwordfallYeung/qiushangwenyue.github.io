@@ -1,16 +1,19 @@
 blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
+    var hostname;
     var absUrl=$location.absUrl();
-    var path=$location.path();
-    var url=$location.url();
-    var hash=$location.hash();
     var host=$location.host();
     var port=$location.port();
     console.log("absUrl: "+absUrl);
-    console.log("path: "+path);
-    console.log("hash; "+hash);
-    console.log("url: " +url);
     console.log(host+port);
-    $http.get(host+"/article/article.json").then(function (response) {
+    if (port===null){
+        //本地访问
+        hostname=absUrl.substring(0,absUrl.indexOf("index.html"));
+    }else {
+        //git 访问
+        hostname=host+":"+port;
+    }
+    console.log("hostname: "+hostname);
+    $http.get(hostname+"/article/article.json").then(function (response) {
         $scope.hello=response.data.helloworld;
     });
     // $scope.hello="article/2017-11-04/2017-11-04.html";

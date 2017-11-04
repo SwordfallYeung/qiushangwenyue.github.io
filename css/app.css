@@ -909,7 +909,7 @@ body {
 @media (min-width: 768px) {
   .app-aside,
   .navbar-header {
-    width: 250px;
+    width: 200px;
   }
   /*.navbar-collapse,
   .app-content,
@@ -922,7 +922,7 @@ body {
   }
 
   .app-content{
-    margin-right: 250px;
+    margin-right: 200px;
   }
   .app-aside-right {
     position: absolute;

@@ -1,6 +1,8 @@
 blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
     var hostname=getUrl($location);
-
+    console.log("hostname: "+hostname);
+    var url=hostname+"/article/article.json";
+    console.log("url: "+url);
     $http.get(hostname+"/article/article.json").then(function (response) {
         $scope.hello=response.data.helloworld;
     });

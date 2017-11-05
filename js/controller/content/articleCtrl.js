@@ -25,6 +25,7 @@ theme:
 
 function getUrl($location) {
     var hostname;
+    var protocol=$location.protocol();
     var absUrl=$location.absUrl();
     var host=$location.host();
     var port=$location.port();
@@ -36,7 +37,7 @@ function getUrl($location) {
         hostname=absUrl.substring(0,absUrl.indexOf("index.html"));
     }else {
         //git 访问
-        hostname=host;
+        hostname=protocol+"://"+host;
     }
     return hostname;
 }

@@ -1,4 +1,4 @@
-blog.directive("content",articleContentFormat);
+blog.directive("content",articleContentFormat).directive("codeformat",articleCodeFormat);
 
 function articleContentFormat() {
     return {
@@ -18,6 +18,19 @@ function articleContentFormat() {
             // }
         });
         element.context.innerHTML=text+"</div>";
+    }
+}
+
+function articleCodeFormat() {
+    return{
+        restrict:'EA',
+        template:articleCodeFormatTemplate
+        // link:articleCodeFormatLink
+    };
+
+    function articleCodeFormatTemplate(element, attrs) {
+        console.log(element);
+        return "<div ui-codemirror=\"editorOptions\">"+element.text()+"</div>"
     }
 }
 

@@ -1,4 +1,4 @@
-blog.directive("articleContentFormat",articleContentFormat);
+blog.directive("content",articleContentFormat);
 
 function articleContentFormat() {
     return {
@@ -9,7 +9,7 @@ function articleContentFormat() {
     };
 
     function articleContentFormatLink($scope, element, attrs) {
-        var text="";
+        var text="<div class=\"text\">";
         var value=element.text();
         var varArray=value.split("\n");
         varArray.forEach(function (value,index,array) {
@@ -17,7 +17,7 @@ function articleContentFormat() {
                 text+="<p>"+value+"</p>";
             // }
         });
-        element.context.innerHTML=text;
+        element.context.innerHTML=text+"</div>";
     }
 }
 

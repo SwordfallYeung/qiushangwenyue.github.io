@@ -29,7 +29,6 @@ function articleCodeFormat() {
     };
 
     function articleCodeFormatTemplate(element, attrs) {
-        console.log(element);
         return "<div ui-codemirror=\"editorOptions\">"+element.text()+"</div>"
     }
 }

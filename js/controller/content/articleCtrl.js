@@ -26,6 +26,9 @@ function getUrl($location) {
     var absUrl=$location.absUrl();
     var host=$location.host();
     var port=$location.port();
+    console.log("absUrl: "+absUrl);
+    console.log("host: "+host);
+    console.log("port: "+port);
     if (port===null){
         //本地访问
         hostname=absUrl.substring(0,absUrl.indexOf("index.html"));

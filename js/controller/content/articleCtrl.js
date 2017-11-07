@@ -1,8 +1,14 @@
 blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
+
+    $scope.showLists=true;
+    $scope.showArticle=false;
+    $scope.hello="";
+
     var hostname=getUrl($location);
 
     $http.get(hostname+"/article/article.json").then(function (response) {
-        $scope.hello=response.data.helloworld;
+        $scope.articleList=response.data;
+        // $scope.hello=response.data.helloworld;
     });
 
     $scope.editorOptions={
@@ -11,6 +17,13 @@ blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$ht
         mode: 'text/x-java',
         theme:'icecoder'
     };
+
+    $scope.clickUrl=function (content) {
+        console.log(content);
+        $scope.showLists=false;
+        $scope.showArticle=true;
+        $scope.hello=content;
+    }
 }]);
 /*
 theme:

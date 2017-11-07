@@ -9,9 +9,18 @@
     <!--/ main header-->
 
     <!--main-->
-    <div class="wrapper-md">
+    <div class="wrapper-md" ng-controller="articleCtrl">
+        <!--lists-->
+        <div class="panel wrapper-md" ng-show="showLists">
+            <h3 class="text-center">
+                最新文章列表
+            </h3>
+            <p ng-repeat="x in articleList"><a  ng-click="clickUrl(x.content)">{{x.title}}</a></p>
+        </div>
+        <!--/ lists-->
+
         <!-- tasks -->
-        <div class="panel wrapper" ng-controller="articleCtrl">
+        <div class="panel wrapper" ng-show="showArticle">
             <div data-ng-include="hello"></div>
         </div>
         <!-- / tasks -->

@@ -1,4 +1,4 @@
-blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
+blog.controller("articleCtrl",['$scope','$http','$location','$templateCache',function ($scope,$http,$location,$templateCache) {
 
     $scope.showLists=true;
     $scope.showArticle=false;
@@ -23,7 +23,24 @@ blog.controller("articleCtrl",['$scope','$http','$location',function ($scope,$ht
         $scope.showLists=false;
         $scope.showArticle=true;
         $scope.hello=content;
-    }
+    };
+
+    //获取网页内容
+    $scope.getContent=function (url) {
+        $http({
+           method:'GET',
+           url:hostname+"/"+url,
+           cache:$templateCache
+        }).then(function (response) {
+            console.log(response.status);
+            console.log(response.data);
+        },function (response) {
+            console.log(response.data || 'Request failed');
+            console.log(response.status);
+        });
+        return "helo";
+
+    };
 }]);
 /*
 theme:

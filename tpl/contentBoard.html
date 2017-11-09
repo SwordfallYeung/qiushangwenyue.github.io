@@ -2,22 +2,36 @@
 <div class="col">
     <!--main header-->
         <div class="bg-light lter b-b wrapper-md">
-            <div class="row">
-
-            </div>
+            <h2 class="m-n font-thin h3">最新文章列表</h2>
         </div>
     <!--/ main header-->
 
     <!--main-->
     <div class="wrapper-md" ng-controller="articleCtrl">
-        <!--lists-->
-        <div class="panel wrapper-md" ng-show="showLists">
-            <h3 class="text-center">
-                最新文章列表
-            </h3>
-            <p ng-repeat="x in articleList"><a  ng-click="clickUrl(x.content)">{{x.title}}</a></p>
-        </div>
-        <!--/ lists-->
+        <!--<div class="row">-->
+            <!--<div class="col-sm-13">-->
+                <div class="blog-post">
+                    <!--lists-->
+                    <div class="panel" ng-show="showLists" ng-repeat="x in articleList">
+                        <div class="wrapper-lg">
+                            <h2 class="m-t-none"><a href ng-click="clickUrl(x.url)">{{x.title}}</a></h2>
+                            <div>
+                                <p >{{::getContent(x.url)}}</p>
+                            </div>
+                            <div class="line line-lg b-b b-light"></div>
+                            <div class="text-muted">
+                                <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">{{x.author}}</a>
+                                <i class="fa fa-clock-o text-muted"></i> {{x.date}}
+                                <a href class="m-l-sm m-r-sm"><i class="fa fa-comment-o text-muted"></i> 2 comments </a>
+                                <i class="fa fa-tags text-muted"></i> <span class="m-r-sm" ng-repeat="y in x.tags">{{y}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ lists-->
+
+                </div>
+            <!--</div>-->
+        <!--</div>-->
 
         <!-- tasks -->
         <div class="panel wrapper" ng-show="showArticle">

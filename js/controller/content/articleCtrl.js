@@ -7,8 +7,11 @@ blog.controller("articleCtrl",['$scope','$http','$location','$templateCache',fun
     var hostname=getUrl($location);
 
     $http.get(hostname+"/article/article.json").then(function (response) {
-        $scope.articleList=response.data;
-        // $scope.hello=response.data.helloworld;
+        var articleList=response.data;
+        $scope.articleList=articleList;
+        for (var a in articleList){
+            getContent(articleList[a].url,hostname,$templateCache,$http,$scope,a);
+        }
     });
 
     $scope.editorOptions={
@@ -19,27 +22,9 @@ blog.controller("articleCtrl",['$scope','$http','$location','$templateCache',fun
     };
 
     $scope.clickUrl=function (content) {
-        console.log(content);
         $scope.showLists=false;
         $scope.showArticle=true;
         $scope.hello=content;
-    };
-
-    //获取网页内容
-    $scope.getContent=function (url) {
-        $http({
-           method:'GET',
-           url:hostname+"/"+url,
-           cache:$templateCache
-        }).then(function (response) {
-            console.log(response.status);
-            console.log(response.data);
-        },function (response) {
-            console.log(response.data || 'Request failed');
-            console.log(response.status);
-        });
-        return "helo";
-
     };
 }]);
 /*
@@ -65,4 +50,22 @@ function getUrl($location) {
         hostname=protocol+"://"+host;
     }
     return hostname;
+}
+
+//获取网页内容
+function getContent(url,hostname,$templateCache,$http,$scope,a) {
+    $http({
+        method:'GET',
+        url:hostname+"/"+url,
+        cache:$templateCache
+    }).then(function (response) {
+        // console.log(response.data);
+        var content=response.data;
+        return content.substring(content.indexOf("<content>")+9,content.indexOf("</content>"));
+    }).then(function (data) {
+        var varArray=data.split("\n");
+        // console.log(varArray);
+        $scope.articleList[a].preContent=varArray[1];
+        console.log($scope.articleList[a].preContent);
+    });
 }

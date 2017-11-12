@@ -63,9 +63,19 @@ function getContent(url,hostname,$templateCache,$http,$scope,a) {
         var content=response.data;
         return content.substring(content.indexOf("<content>")+9,content.indexOf("</content>"));
     }).then(function (data) {
+        //截取前154个字符
+        // var varArray=trim(data).substr(0,154);
         var varArray=data.split("\n");
         // console.log(varArray);
-        $scope.articleList[a].preContent=varArray[1];
-        console.log($scope.articleList[a].preContent);
+        $scope.articleList[a].preContent=varArray[1]+varArray[2];
+        // console.log($scope.articleList[a].preContent);
     });
+}
+
+function trim(str)
+{
+    var result;
+    result = str.replace(/(^\s+)|(\s+$)/g,"");
+    result = result.replace(/\s/g,"");
+    return result;
 }

@@ -40,6 +40,11 @@ a:focus {
   text-decoration: none;
 }
 
+.readToFull:hover{
+  color: blue;
+}
+
+
 label {
   font-weight: normal;
 }
